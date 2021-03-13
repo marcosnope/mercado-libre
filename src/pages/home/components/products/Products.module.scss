@@ -3,6 +3,7 @@
   border-radius: 4px;
   .card {
     border-bottom: 1px solid #eeeeee;
+    cursor: pointer;
     &:last-child {
       border-bottom: none;
     }
