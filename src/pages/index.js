@@ -1,1 +1,1 @@
-export { default as Home } from './home/MercadoLibre';
+export { default as Home } from './home/Home';
