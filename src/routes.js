@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import { Home, ProductSearch, DetailProduct } from 'pages';
+import { Home, ProductSearch, DetailProduct } from 'views';
 
 const Routes = () => (
   <Router>
