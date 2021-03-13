@@ -3,10 +3,15 @@ import ReactDOM from 'react-dom';
 import 'index.scss';
 import reportWebVitals from './reportWebVitals';
 import Routes from './routes';
+import { StateProvider } from './context/store';
+import { indexReducer } from './context/reducers';
+import initialState from './initialState';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Routes />
+    <StateProvider reducer={indexReducer} initialState={initialState}>
+      <Routes />
+    </StateProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

@@ -15,7 +15,7 @@ function FormControl({ handleSubmit }) {
           placeholder="Nunca dejes de buscar"
         />
         <button type="submit" form="form-product">
-          <img src={search} alt="search" />
+          <img src={search} alt="search" width="18" height="18" />
         </button>
       </div>
     </form>

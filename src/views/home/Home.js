@@ -13,7 +13,6 @@ function Home() {
       history.push(`/items?search=${searchText}`);
     }
   };
-
   return <Header handleSubmit={handleSubmit} />;
 }
 
