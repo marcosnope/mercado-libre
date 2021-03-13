@@ -6,7 +6,7 @@ import styles from './BreadCrumb.module.scss';
 
 const cx = classNames.bind(styles);
 
-const BreadCrumb = ({ items }) => {
+function BreadCrumb({ items }) {
   return (
     <Container>
       <nav className={cx('nav')}>
@@ -28,6 +28,6 @@ const BreadCrumb = ({ items }) => {
       </nav>
     </Container>
   );
-};
+}
 
 export default BreadCrumb;
