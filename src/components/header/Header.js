@@ -8,7 +8,7 @@ import styles from './Header.module.scss';
 
 const cx = classNames.bind(styles);
 
-function Header() {
+function Header({ handleSubmit }) {
   return (
     <header>
       <Container>
@@ -21,7 +21,7 @@ function Header() {
             </div>
           </Col>
           <Col xs={10} sm={10} md={11}>
-            <FormControl />
+            <FormControl handleSubmit={handleSubmit} />
           </Col>
         </Row>
       </Container>

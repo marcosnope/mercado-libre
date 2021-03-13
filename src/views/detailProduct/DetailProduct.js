@@ -1,5 +1,6 @@
 import React from 'react';
 // import { useParams } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { Header, BreadCrumb } from 'components';
 import { Container, Row, Col } from 'react-bootstrap';
 import classNames from 'classnames/bind';
@@ -26,9 +27,20 @@ const product = {
 function DetailProduct() {
   // const { id } = useParams();
 
+  const history = useHistory();
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const searchText = event.target[0].value;
+
+    if (searchText) {
+      history.push(`/items?search=${searchText}`);
+    }
+  };
+
   return (
     <section>
-      <Header />
+      <Header handleSubmit={handleSubmit} />
       <BreadCrumb items={migaDePan} />
       <Container>
         <Container fluid className={cx('content')}>

@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+import { useHistory } from 'react-router-dom';
 import { Header, BreadCrumb, SearchEmpty } from 'components';
 import Products from './components/products/Products';
 
@@ -37,6 +38,16 @@ const products = [
 function ProductSearch(props) {
   const { location } = props;
   const productSearch = new URLSearchParams(location.search).get('search');
+  const history = useHistory();
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const searchText = event.target[0].value;
+
+    if (searchText) {
+      history.push(`/items?search=${searchText}`);
+    }
+  };
 
   const productsList = (productSearch) => (
     <section>
@@ -47,7 +58,7 @@ function ProductSearch(props) {
 
   return (
     <Fragment>
-      <Header />
+      <Header handleSubmit={handleSubmit} />
       {productSearch ? productsList(productSearch) : <SearchEmpty />}
     </Fragment>
   );

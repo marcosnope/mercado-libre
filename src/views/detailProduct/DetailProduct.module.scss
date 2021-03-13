@@ -13,9 +13,16 @@
   }
   .box-price {
     padding: 32px;
+    p {
+      font-size: 0.875rem;
+      color: #666666;
+    }
     h4,
     h1 {
       margin-bottom: 32px;
+    }
+    h1 {
+      font-size: 2.875rem;
     }
     button {
       width: 100%;
@@ -36,10 +43,12 @@
   .box-description {
     padding: 32px;
     h3 {
+      color: #333333;
       margin-bottom: 32px;
     }
     p {
       margin: 0;
+      color: #666666;
     }
   }
 }
