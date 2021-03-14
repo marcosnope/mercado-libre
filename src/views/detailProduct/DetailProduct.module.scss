@@ -1,3 +1,5 @@
+@import 'assets/scss/Variables.module.scss';
+
 .content {
   background-color: white;
   border-radius: 4px;
@@ -9,13 +11,21 @@
       height: 680px;
       object-fit: contain;
       border-radius: 4px;
+      @media #{$breakpoint-medium} {
+        width: 280px;
+        height: 280px;
+      }
+      @media #{$breakpoint-small} {
+        width: 280px;
+        height: 280px;
+      }
     }
   }
   .box-price {
     padding: 32px;
     p {
       font-size: 0.875rem;
-      color: #666666;
+      color: $global-color-grey-2;
       text-transform: capitalize;
     }
     h4,
@@ -34,28 +44,28 @@
     button {
       width: 100%;
       border: none;
-      background-color: #3483fa;
+      background-color: $global-color-blue;
       border-radius: 4px;
       color: white;
       padding: 10px 0px;
       font-weight: 600;
       &:hover {
-        background-color: #2968c8;
+        background-color: $global-color-blue-1;
       }
       &:active {
-        background-color: #1f4e96;
+        background-color: $global-color-blue-2;
       }
     }
   }
   .box-description {
     padding: 32px;
     h3 {
-      color: #333333;
+      color: $global-color-grey-3;
       margin-bottom: 32px;
     }
     p {
       margin: 0;
-      color: #666666;
+      color: $global-color-grey-2;
       white-space: pre-line;
     }
   }

@@ -1,16 +1,18 @@
+@import 'assets/scss/Variables.module.scss';
+
 .content {
   background-color: white;
   border-radius: 4px;
   .card {
-    border-bottom: 1px solid #eeeeee;
+    border-bottom: 1px solid $global-color-grey;
     &:last-child {
       border-bottom: none;
     }
     a {
-      color: #333333;
+      color: $global-color-grey-3;
       text-decoration: none;
       &:hover {
-        color: #666666;
+        color: $global-color-grey-2;
         text-decoration: none;
       }
     }
@@ -48,7 +50,7 @@
     }
     .box-information {
       padding-top: 32px;
-      color: #666666;
+      color: $global-color-grey-2;
       font-size: 0.75rem;
       p {
        text-transform: capitalize;

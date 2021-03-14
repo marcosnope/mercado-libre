@@ -47,12 +47,12 @@ function DetailProduct(props) {
         <Container>
           <Container fluid className={cx('content')}>
             <Row>
-              <Col xs={8} sm={8} md={8} className="p-0">
+              <Col xs={12} sm={12} md={8} className="p-0">
                 <div className={cx('box-image')}>
                   <img id="image-product" src={item.picture} alt="product" />
                 </div>
               </Col>
-              <Col xs={4} sm={4} md={4} className="p-0">
+              <Col xs={12} sm={12} md={4} className="p-0">
                 <div className={cx('box-price')}>
                   <p>{item.condition}</p>
                   <h4 id="title-product">{item.title}</h4>
