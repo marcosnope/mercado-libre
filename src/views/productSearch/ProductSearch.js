@@ -6,10 +6,10 @@ import Products from './components/products/Products';
 import { productsSearch } from 'context/products/actions';
 
 function ProductSearch(props) {
-  const { location } = props;
-  const productSearch = new URLSearchParams(location.search).get('search');
-  const history = useHistory();
   const [{ products }, dispatch] = useStateValue();
+  const { location } = props;
+  const history = useHistory();
+  const productSearch = new URLSearchParams(location.search).get('search');
 
   const getProduct = async (search) => {
     await productsSearch(dispatch, search);
@@ -38,7 +38,7 @@ function ProductSearch(props) {
   return (
     <Fragment>
       <Header handleSubmit={handleSubmit} />
-      {productSearch ? products.items && productsList() : <SearchEmpty />}
+      {productSearch ? products && productsList() : <SearchEmpty />}
     </Fragment>
   );
 }

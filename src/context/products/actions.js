@@ -23,7 +23,7 @@ export const productsSearch = async (dispatch, search) => {
 export const productsId = async (dispatch, id) => {
   let status = false;
   let message = null;
-  await get(searchProduct, id)
+  await get(`${searchProduct}/${id}`)
     .then((json) => json.data)
     .then((data) => {
       dispatch({

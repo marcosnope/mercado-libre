@@ -16,7 +16,7 @@ function Products({ items }) {
             index < 4 && (
               <Row key={`product-${index}`} className={cx('card')}>
                 <Col className="pl-0 py-3" xs={10} sm={10} md={10}>
-                  <Link to={`/items/${index}`} className="d-flex">
+                  <Link to={`/items/${product.id}`} className="d-flex">
                     <div className={cx('box-image')}>
                       <img src={product.picture} alt="product" />
                     </div>

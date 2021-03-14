@@ -8,7 +8,7 @@ import styles from './Header.module.scss';
 
 const cx = classNames.bind(styles);
 
-function Header({ handleSubmit }) {
+function Header({ handleSubmit, textValue, onChangeValue }) {
   return (
     <header>
       <Container>

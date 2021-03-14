@@ -1,21 +1,22 @@
-import React from 'react';
-// import { useParams } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import { useHistory } from 'react-router-dom';
 import { Header, BreadCrumb } from 'components';
 import { Container, Row, Col } from 'react-bootstrap';
 import { useStateValue } from 'context/store';
+import { productsId } from 'context/products/actions';
 import classNames from 'classnames/bind';
 import styles from './DetailProduct.module.scss';
 
 const cx = classNames.bind(styles);
 
-const migaDePan = [
-  { title: 'Electronica, Audio y Video' },
-  { title: 'iPod' },
-  { title: 'Reproductores' },
-  { title: 'iPod touch' },
-  { title: '32 GB' },
-];
+// const migaDePan = [
+//   { title: 'Electronica, Audio y Video' },
+//   { title: 'iPod' },
+//   { title: 'Reproductores' },
+//   { title: 'iPod touch' },
+//   { title: '32 GB' },
+// ];
 
 const product = {
   image: 'https://http2.mlstatic.com/D_677004-MLA31971773611_082019-O.jpg',
@@ -26,9 +27,18 @@ const product = {
 };
 
 function DetailProduct() {
-  // const { id } = useParams();
+  const { id } = useParams();
   const history = useHistory();
   const [{ products }, dispatch] = useStateValue();
+
+  const getProductId = async (idProduct) => {
+    await productsId(dispatch, idProduct);
+  };
+
+  useEffect(() => {
+    getProductId(id); // eslint-disable-next-line
+  }, []);
+
   const handleSubmit = (event) => {
     event.preventDefault();
     const searchText = event.target[0].value;
