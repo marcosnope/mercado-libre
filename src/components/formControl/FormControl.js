@@ -12,7 +12,7 @@ function FormControl({ handleSubmit }) {
         <input
           type="text"
           className={cx('form-control')}
-          placeholder="Nunca dejes de buscar"
+          placeholder="Nunca dejes de buscarare"
         />
         <button type="submit" form="form-product">
           <img src={search} alt="search" width="18" height="18" />
