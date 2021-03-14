@@ -6,14 +6,14 @@ import styles from './BreadCrumb.module.scss';
 
 const cx = classNames.bind(styles);
 
-const BreadCrumb = ({ items }) => {
+function BreadCrumb({ items }) {
   return (
     <Container>
       <nav className={cx('nav')}>
         <ul>
           {items.map((menu, index) => (
             <div key={`item-${index}`}>
-              <a href="/">{menu.title}</a>
+              <a href="/">{menu}</a>
               {index < items.length - 1 && (
                 <img
                   src={arrowRight}
@@ -28,6 +28,6 @@ const BreadCrumb = ({ items }) => {
       </nav>
     </Container>
   );
-};
+}
 
 export default BreadCrumb;

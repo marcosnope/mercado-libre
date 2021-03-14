@@ -3,9 +3,16 @@
   border-radius: 4px;
   .card {
     border-bottom: 1px solid #eeeeee;
-    cursor: pointer;
     &:last-child {
       border-bottom: none;
+    }
+    a {
+      color: #333333;
+      text-decoration: none;
+      &:hover {
+        color: #666666;
+        text-decoration: none;
+      }
     }
     .box-image {
       padding: 0px 1rem;
@@ -32,9 +39,14 @@
           margin: 0px 10px;
         }
       }
+      p {
+        font-size: 1.125rem;
+      }
     }
     .box-information {
       padding-top: 32px;
+      color: #666666;
+      font-size: 0.75rem;
     }
   }
 }

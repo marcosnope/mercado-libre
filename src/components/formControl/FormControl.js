@@ -5,19 +5,21 @@ import styles from './FormControl.module.scss';
 
 const cx = classNames.bind(styles);
 
-const FormControl = (_) => {
+function FormControl({ handleSubmit }) {
   return (
-    <div className={cx('container')}>
-      <input
-        type="text"
-        className={cx('form-control')}
-        placeholder="Nunca dejes de buscar"
-      />
-      <span>
-        <img src={search} alt="search" />
-      </span>
-    </div>
+    <form id="form-product" onSubmit={handleSubmit}>
+      <div className={cx('container')}>
+        <input
+          type="text"
+          className={cx('form-control')}
+          placeholder="Nunca dejes de buscar"
+        />
+        <button type="submit" form="form-product">
+          <img src={search} alt="search" width="18" height="18" />
+        </button>
+      </div>
+    </form>
   );
-};
+}
 
 export default FormControl;
