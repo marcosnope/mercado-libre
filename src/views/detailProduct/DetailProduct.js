@@ -3,6 +3,7 @@ import React from 'react';
 import { useHistory } from 'react-router-dom';
 import { Header, BreadCrumb } from 'components';
 import { Container, Row, Col } from 'react-bootstrap';
+import { useStateValue } from 'context/store';
 import classNames from 'classnames/bind';
 import styles from './DetailProduct.module.scss';
 
@@ -26,9 +27,8 @@ const product = {
 
 function DetailProduct() {
   // const { id } = useParams();
-
   const history = useHistory();
-
+  const [{ products }, dispatch] = useStateValue();
   const handleSubmit = (event) => {
     event.preventDefault();
     const searchText = event.target[0].value;
@@ -41,7 +41,7 @@ function DetailProduct() {
   return (
     <section>
       <Header handleSubmit={handleSubmit} />
-      <BreadCrumb items={migaDePan} />
+      {/* <BreadCrumb items={products.breadCrumb} /> */}
       <Container>
         <Container fluid className={cx('content')}>
           <Row>

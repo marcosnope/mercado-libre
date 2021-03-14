@@ -8,7 +8,6 @@ function Home() {
   const handleSubmit = (event) => {
     event.preventDefault();
     const searchText = event.target[0].value;
-
     if (searchText) {
       history.push(`/items?search=${searchText}`);
     }

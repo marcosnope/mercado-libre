@@ -13,7 +13,7 @@ function BreadCrumb({ items }) {
         <ul>
           {items.map((menu, index) => (
             <div key={`item-${index}`}>
-              <a href="/">{menu.title}</a>
+              <a href="/">{menu}</a>
               {index < items.length - 1 && (
                 <img
                   src={arrowRight}
