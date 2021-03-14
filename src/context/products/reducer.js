@@ -1,7 +1,9 @@
-import { PRODUCTS_LIST, PRODUCTS_ID } from './constants';
+import { INITIALIZE, PRODUCTS_LIST, PRODUCTS_ID } from './constants';
 
 const productsReducer = (state, action) => {
   switch (action.type) {
+    case INITIALIZE:
+      return null;
     case PRODUCTS_LIST:
       return {
         ...action.products,

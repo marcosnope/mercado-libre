@@ -1,14 +1,16 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { shipping } from 'assets/images';
+import { Link } from 'react-router-dom';
+import { SearchError } from 'components';
+import { formatterPeso } from 'utils/formats';
 import classNames from 'classnames/bind';
 import style from './Products.module.scss';
-import { Link } from 'react-router-dom';
 
 const cx = classNames.bind(style);
 
 function Products({ items }) {
-  return (
+  return items.length > 0 ? (
     <Container className="mb-5">
       <Container fluid className={cx('content')}>
         {items.map(
@@ -26,7 +28,10 @@ function Products({ items }) {
                     </div>
                     <div className={cx('box-description')}>
                       <div>
-                        <h4>{product.price.amount}</h4>
+                        <h4>
+                          <span>$</span>
+                          {formatterPeso.format(product.price.amount)}
+                        </h4>
                         {product.free_shipping && (
                           <img
                             src={shipping}
@@ -42,7 +47,7 @@ function Products({ items }) {
                 </Col>
                 <Col className="pl-0 py-3 d-flex" xs={2} sm={2} md={2}>
                   <div className={cx('box-information')}>
-                    <p>{product.place}</p>
+                    <p>{product.condition}</p>
                   </div>
                 </Col>
               </Row>
@@ -50,6 +55,8 @@ function Products({ items }) {
         )}
       </Container>
     </Container>
+  ) : (
+    <SearchError />
   );
 }
 

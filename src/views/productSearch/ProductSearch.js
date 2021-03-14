@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useStateValue } from 'context/store';
 import { Header, BreadCrumb, SearchEmpty } from 'components';
@@ -10,6 +10,7 @@ function ProductSearch(props) {
   const { location } = props;
   const history = useHistory();
   const productSearch = new URLSearchParams(location.search).get('search');
+  const [searchValue, setSearchValue] = useState(productSearch || '');
 
   const getProduct = async (search) => {
     await productsSearch(dispatch, search);
@@ -37,7 +38,11 @@ function ProductSearch(props) {
 
   return (
     <Fragment>
-      <Header handleSubmit={handleSubmit} />
+      <Header
+        handleSubmit={handleSubmit}
+        searchValue={searchValue}
+        setSearchValue={setSearchValue}
+      />
       {productSearch ? products && productsList() : <SearchEmpty />}
     </Fragment>
   );

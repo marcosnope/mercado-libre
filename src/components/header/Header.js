@@ -8,7 +8,7 @@ import styles from './Header.module.scss';
 
 const cx = classNames.bind(styles);
 
-function Header({ handleSubmit, textValue, onChangeValue }) {
+function Header({ handleSubmit, searchValue, setSearchValue }) {
   return (
     <header>
       <Container>
@@ -21,7 +21,11 @@ function Header({ handleSubmit, textValue, onChangeValue }) {
             </div>
           </Col>
           <Col xs={10} sm={10} md={11}>
-            <FormControl handleSubmit={handleSubmit} />
+            <FormControl
+              handleSubmit={handleSubmit}
+              searchValue={searchValue}
+              setSearchValue={setSearchValue}
+            />
           </Col>
         </Row>
       </Container>

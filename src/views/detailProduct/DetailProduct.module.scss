@@ -16,13 +16,20 @@
     p {
       font-size: 0.875rem;
       color: #666666;
+      text-transform: capitalize;
     }
     h4,
     h1 {
       margin-bottom: 32px;
+      span {
+        margin-right: 6px;
+      }
     }
     h1 {
       font-size: 2.875rem;
+    }
+    h4{
+      font-weight:700;
     }
     button {
       width: 100%;
@@ -49,6 +56,7 @@
     p {
       margin: 0;
       color: #666666;
+      white-space: pre-line;
     }
   }
 }
