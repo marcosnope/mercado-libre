@@ -57,14 +57,14 @@ function DetailProduct() {
           <Row>
             <Col xs={8} sm={8} md={8} className="p-0">
               <div className={cx('box-image')}>
-                <img src={product.image} alt="product" />
+                <img id="image-product" src={product.image} alt="product" />
               </div>
             </Col>
             <Col xs={4} sm={4} md={4} className="p-0">
               <div className={cx('box-price')}>
                 <p>Nuevo 234 vendidos</p>
-                <h4>Deco Reverse Sobrero Oxford</h4>
-                <h1>$ 1.980</h1>
+                <h4 id="title-product">Deco Reverse Sobrero Oxford</h4>
+                <h1 id="price-product">$ 1.980</h1>
                 <button>Comprar</button>
               </div>
             </Col>
@@ -73,7 +73,7 @@ function DetailProduct() {
             <Col xs={12} sm={12} md={8} className="p-0">
               <div className={cx('box-description')}>
                 <h3>Descripción del producto</h3>
-                <p>
+                <p id="description-product">
                   Lorem ipsum odor amet, consectetuer adipiscing elit. Ac purus
                   in massa egestas mollis varius; dignissim elementum. Mollis
                   tincidunt mattis hendrerit dolor eros enim, nisi ligula

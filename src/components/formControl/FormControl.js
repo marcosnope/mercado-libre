@@ -10,6 +10,7 @@ function FormControl({ handleSubmit }) {
     <form id="form-product" onSubmit={handleSubmit}>
       <div className={cx('container')}>
         <input
+          id="input-search"
           type="text"
           className={cx('form-control')}
           placeholder="Nunca dejes de buscarare"

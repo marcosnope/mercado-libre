@@ -14,7 +14,11 @@ function Products({ items }) {
         {items.map(
           (product, index) =>
             index < 4 && (
-              <Row key={`product-${index}`} className={cx('card')}>
+              <Row
+                id={`product-${index}`}
+                key={`product-${index}`}
+                className={cx('card')}
+              >
                 <Col className="pl-0 py-3" xs={10} sm={10} md={10}>
                   <Link to={`/items/${product.id}`} className="d-flex">
                     <div className={cx('box-image')}>
